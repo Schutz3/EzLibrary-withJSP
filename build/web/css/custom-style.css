@@ -1,0 +1,66 @@
+body {
+    height: 100%;
+    margin: 0;
+}
+html {
+    padding-bottom: 50px;
+    min-height: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: red;
+}
+
+.disclaimer{display: none;}
+
+.page-holder {
+    min-height: 100vh;
+  }
+  
+.bg-cover {
+    background-size: cover !important;
+  }
+
+img.coverbook{
+    height: 250px  ;
+}
+.opacity-1{
+    opacity:0.95!important;
+}
+
+.opacity-0{
+    opacity:1!important;
+}
+
+footer.inifooter {
+    position: absolute; bottom: 0;
+}
+
+div.bacabuku {
+    margin: 0 auto;
+    display: block;
+  }
+
+h3.hammer {
+    font-family: sans-serif;
+}
+
+#myFrame { 
+    width:100%; height:800px; 
+}
+
+#nfFrame{
+    width:100%; height:100%; 
+}
+
+#sickle{
+    color: yellow;
+}
