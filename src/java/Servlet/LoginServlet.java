@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
                 return;
             }
             
-            RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");   
+            RequestDispatcher dispatch = request.getRequestDispatcher("index");   
             dispatch.forward(request, response);
         }
         
@@ -93,7 +93,7 @@ public class LoginServlet extends HttpServlet {
                 
                 if(!isValid) {
                     session.setAttribute("errors", "Username or password is invalid!");
-                    response.sendRedirect("login");    
+                    response.sendRedirect("index");    
                     return;
                 }
                 
@@ -108,7 +108,7 @@ public class LoginServlet extends HttpServlet {
             }
             else {
                 session.setAttribute("errors", "Username or password is invalid!");
-                response.sendRedirect("login");
+                response.sendRedirect("index");
             }
 
         } catch (Exception e) {
