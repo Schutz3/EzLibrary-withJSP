@@ -41,6 +41,9 @@ public class IndexServlet extends HttpServlet {
             RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
             dispatch.forward(request, response);
         }
+         catch (Exception e){
+             System.out.println(e);
+         }
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

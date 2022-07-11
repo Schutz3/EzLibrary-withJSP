@@ -6,24 +6,46 @@
 <%@page import="Controller.BookController"%>
 <%@page import="java.sql.ResultSet" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%          if (session.getAttribute("isLoggedIn") != null) {
+                response.sendRedirect("dashboard");
+                return;
+            }
+            BookController bc = new BookController();
+            String search = "";
+            String sort = "";
+            ResultSet rs;
+            if (request.getParameter("search") != null) {
+                search = request.getParameter("search");
+            }
+            if (request.getParameter("sort") != null) {
+                sort = request.getParameter("sort");
+            }
+                if (search.equals("")) {
+                    if (sort.equals("Zz-Aa")) {
+                    rs = bc.sortZa();
+                    } 
+                    else if (sort.equals("desc")) {
+                    rs = bc.sortNl();
+                    }
+                    else if (sort.equals("asc")) {
+                    rs = bc.sortLn();
+                    }
+                    else if (sort.equals("Aa-Zz")) {
+                    rs = bc.sortAz();
+                    }
+                    else {
+                    rs = bc.get();
+                    }
+                } else {
+                rs = bc.getByName(search);
+                }
+        %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <jsp:include page="css/style.jsp"/>  
     </head>
     <body>
-        <%  BookController bc = new BookController();
-            String search = "";
-            ResultSet rs;
-            if (request.getParameter("search") != null) {
-                search = request.getParameter("search");
-            } 
-            if (search.equals("")) {
-                rs = bc.get();
-            } else {
-                rs = bc.getByName(search);
-            }
-        %>
         <div style="background: url('./img/library.jpg')" class="page-holder bg-cover">    
            <jsp:include page="layout/navbar.jsp"/>  
             <jsp:include page="layout/loginmdl.jsp"/>  

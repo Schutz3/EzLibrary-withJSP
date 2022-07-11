@@ -6,22 +6,39 @@
 <%@page import="Controller.BookController"%>
 <%@page import="java.sql.ResultSet" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%  
-            if (session.getAttribute("isLoggedIn") == null) {
+<%         if (session.getAttribute("isLoggedIn") == null) {
                 response.sendRedirect("index");
                 return;
             }
             BookController bc = new BookController();
             String search = "";
             ResultSet rs;            
+            String sort = "";
             if (request.getParameter("search") != null) {
                 search = request.getParameter("search");
-            } 
-            if (search.equals("")) {
-                rs = bc.get();
-            } else {
-                rs = bc.getByName(search);
             }
+            if (request.getParameter("sort") != null) {
+                sort = request.getParameter("sort");
+            }
+                if (search.equals("")) {
+                    if (sort.equals("Zz-Aa")) {
+                    rs = bc.sortZa();
+                    } 
+                    else if (sort.equals("desc")) {
+                    rs = bc.sortNl();
+                    }
+                    else if (sort.equals("asc")) {
+                    rs = bc.sortLn();
+                    }
+                    else if (sort.equals("Aa-Zz")) {
+                    rs = bc.sortAz();
+                    }
+                    else {
+                    rs = bc.get();
+                    }
+                } else {
+                rs = bc.getByName(search);
+                }
 %>
 <!DOCTYPE html>
 <html lang="en">

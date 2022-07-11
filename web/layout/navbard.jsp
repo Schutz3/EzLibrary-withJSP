@@ -13,14 +13,32 @@
             ReqTDController btd = new ReqTDController();
             String search = "";
             ResultSet rs;
+            String sort = "";
             if (request.getParameter("search") != null) {
                 search = request.getParameter("search");
-            } 
-            if (search.equals("")) {
-                rs = bc.get();
-            } else {
-                rs = bc.getByName(search);
             }
+            if (request.getParameter("sort") != null) {
+                sort = request.getParameter("sort");
+            }
+                if (search.equals("")) {
+                    if (sort.equals("Zz-Aa")) {
+                    rs = bc.sortZa();
+                    } 
+                    else if (sort.equals("desc")) {
+                    rs = bc.sortNl();
+                    }
+                    else if (sort.equals("asc")) {
+                    rs = bc.sortLn();
+                    }
+                    else if (sort.equals("Aa-Zz")) {
+                    rs = bc.sortAz();
+                    }
+                    else {
+                    rs = bc.get();
+                    }
+                } else {
+                rs = bc.getByName(search);
+                }
             ResultSet td = btd.get();
             ResultSet rq = brq.get();
         %>
@@ -133,9 +151,9 @@
 <!-- START NavigationBar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
-    <a class="navbar-brand disabled" href="dashboard.jsp">
+    <a class="navbar-brand disabled" href="dashboard">
       <img src="./img/libico.png" width="30" height="30" class="d-inline-block align-top"alt="">
-      Librarian Dashboard
+      Dashboard
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -143,6 +161,18 @@
 
     <div class="navbar-collapse collapse show" id="navbarColor01" >
       <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown ml-1">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          Sort By
+        </a>
+        
+        <ul class="dropdown-menu " aria-labelledby="navbarScrollingDropdown">
+        <li><a class="dropdown-item" href="?sort=desc">Newest</a></li>
+          <li><a class="dropdown-item" href="?sort=asc">Oldest</a></li>
+          <li><a class="dropdown-item" href="?sort=Aa-Zz">Aa-Zz</a></li>
+          <li><a class="dropdown-item" href="?sort=Zz-Aa">Zz-Aa</a></li>
+        </ul>
+      </li>
       <button type="button" class="btn btn-outline-primary btn-sm text-light   ml-3 mb-1 mt-1" data-toggle="modal" data-target="#addBook"><i class="bi bi-plus-square"></i> Book</button>
       <button type="button" class="btn btn-outline-success btn-sm text-light   ml-3 mb-1 mt-1" data-toggle="modal" data-target="#readReq"><i class="bi bi-inboxes-fill"></i> Request (<%= j-1 %>) </button>
       <button type="button" class="btn btn-outline-warning btn-sm text-light ml-3 mb-1 mt-1" data-toggle="modal" data-target="#readRT"><i class="bi bi-exclamation-triangle-fill"></i> Report (<%= i-1 %>) </button>

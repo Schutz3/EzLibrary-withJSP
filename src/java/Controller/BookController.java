@@ -25,6 +25,26 @@ public class BookController extends BaseController {
         return this.get(sql);
     }
     
+    public ResultSet sortAz() {
+        String sql = this.query.sortAz;
+        return this.get(sql);
+    }
+    
+    public ResultSet sortZa() {
+        String sql = this.query.sortZa;
+        return this.get(sql);
+    }
+    
+    public ResultSet sortLn() {
+        String sql = this.query.sortLn;
+        return this.get(sql);
+    }
+    
+    public ResultSet sortNl() {
+        String sql = this.query.sortNl;
+        return this.get(sql);
+    }
+    
     public ResultSet getByName(String book) {
         String sql = this.query.getByName;
         
