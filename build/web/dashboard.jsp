@@ -117,6 +117,7 @@
                               </div>
                               <div class="form-group">
                                 <label for="genre">Genre of the Book</label>
+<<<<<<< HEAD
                                   <select class="form-control" id="genre" name="genre" required>
                                       <option value="<%= rs.getString("genre")%>" disabled selected hidden>Select Genre (Current Genre is <b><%= rs.getString("genre")%>)</b></option>
                                         <option>Science</option>
@@ -132,11 +133,23 @@
                               <div class="form-group">
                                 <label for="booklink">PDF File Link (Google Drive) <i class="bi bi-filetype-pdf"></i>  <i class="bi bi-filetype-ppt"></i> <i class="bi bi-filetype-pptx"></i></label>
                                 <input type="url" class="form-control" id="booklink" name="booklink"
+=======
+                                <input type="text" class="form-control" id="genre" name="genre"
+                                  placeholder="Genre of the Book" required autocomplete="off" value="<%= rs.getString("genre")%>" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="booklink">PDF File Link (Google Drive) <i class="bi bi-filetype-pdf"></i>  <i class="bi bi-filetype-ppt"></i> <i class="bi bi-filetype-pptx"></i></label>
+                                <input type="text" class="form-control" id="booklink" name="booklink"
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
                                   placeholder="New Link Required" required autocomplete="off" value="https://drive.google.com/file/d/<%= rs.getString("link")%>/view?usp=sharing" required>
                               </div>
                               <div class="form-group">
                                 <label for="imglink">Image Cover Link (Google Drive) <i class="bi bi-filetype-png"></i><i class="bi bi-filetype-jpg"></i></label>
+<<<<<<< HEAD
                                 <input type="url" class="form-control" id="imglink" name="imglink"
+=======
+                                <input type="text" class="form-control" id="imglink" name="imglink"
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
                                   placeholder="New Link Required" required autocomplete="off" value="https://drive.google.com/file/d/<%= rs.getString("img")%>/view?usp=sharing" required>
                               </div>
                               <div class="d-flex justify-content-end"><button type="submit" class="btn btn-success" name="update"><i class="bi bi-pencil-square"></i> Edit Book</button></div> 

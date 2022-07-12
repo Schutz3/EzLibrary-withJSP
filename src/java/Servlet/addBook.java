@@ -8,7 +8,10 @@ import Controller.BookController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -67,12 +70,18 @@ public class addBook extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+<<<<<<< HEAD
         try(PrintWriter out = response.getWriter()) {
+=======
+        processRequest(request, response);
+        try {
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
             String imglink = request.getParameter("addimglink");
             String judul = request.getParameter("addjudul");
             String penulis = request.getParameter("addpenulis");
             String genre = request.getParameter("addgenre");
             String booklink = request.getParameter("addbooklink");
+<<<<<<< HEAD
             ArrayList<String> errList = new ArrayList<>();
             
             if(!judul.matches("[^<>{}]+") 
@@ -95,6 +104,9 @@ public class addBook extends HttpServlet {
                 out.println("</body>");
                 out.println("</html>");
             }else {
+=======
+            
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
             String ilink = imglink.replaceAll("https://drive\\.google\\.com/file/d/(.*?)/.*?\\?usp=sharing", "$1");
             String blink = booklink.replaceAll("https://drive\\.google\\.com/file/d/(.*?)/.*?\\?usp=sharing", "$1");
             
@@ -108,6 +120,7 @@ public class addBook extends HttpServlet {
             BookController bc = new BookController();
             Boolean res = bc.create(model);
             if (res) {
+<<<<<<< HEAD
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
                     out.println("<head>");
@@ -126,6 +139,15 @@ public class addBook extends HttpServlet {
         System.out.println(e.getMessage());
         }
     }
+=======
+                response.sendRedirect("dashboard");
+            }
+            } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
     /**
      * Returns a short description of the servlet.
      *

@@ -31,16 +31,28 @@
         </div>
         <div class="modal-body">
         <p class="card-text"><b>Please provide valid email so we can contact you</b></p>
+<<<<<<< HEAD
           <form name="formTD" action="addReqTD" method="post"  >
             <div class="form-group">
               <label for="namereqtd">Name</label>
               <input type="Name" class="form-control" name="namereqtd" id="namereqtd"
                 placeholder="Your Name" autocomplete="off">
+=======
+          <form method="post" action="addReqTD">
+            <div class="form-group">
+              <label for="namereqtd">Name</label>
+              <input type="Name" class="form-control" name="namereqtd" id="namereqtd"
+                placeholder="Your Name" required autocomplete="off">
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
             </div>
             <div class="form-group">
               <label for="emailreqtd">Email:</label>
               <input type="email" class="form-control" name="emailreqtd" id="emailreqtd"
+<<<<<<< HEAD
                 placeholder="Your Email e.g admin@ezlibrary.com" autocomplete="off">
+=======
+                placeholder="Your Email e.g admin@ezlibrary.com" required autocomplete="off">
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
             </div>
             <div class="form-group">
               <label for="bookreqtd">Select A Book</label>
@@ -52,7 +64,10 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-secondary" name="submit">Request Take Down</button>
+<<<<<<< HEAD
             <div id='error'></div>
+=======
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
           </form>
         </div>
       </div>

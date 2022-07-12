@@ -18,7 +18,11 @@
         </div>
         <div class="modal-body">
         <p class="card-text"><b>Please provide valid email so we can notify you when your book is published in our site</b></p>
+<<<<<<< HEAD
           <form class="needs-validation" name="formB" action="addReqBook" method="POST">
+=======
+          <form class="needs-validation" method="POST" action="addReqBook">
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
             <div class="form-group">
               <label for="namereqb">Name</label>
               <input type="Name" class="form-control" name="namereqb" id="namereqb" 
@@ -35,7 +39,10 @@
                 placeholder="Title or ISBN Number" required autocomplete="off">
             </div>
             <button type="submit" class="btn btn-secondary">Request</button>
+<<<<<<< HEAD
             <div id='error'></div>
+=======
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
           </form>
         </div>
       </div>

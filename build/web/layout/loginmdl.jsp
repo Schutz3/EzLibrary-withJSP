@@ -35,7 +35,11 @@
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
+<<<<<<< HEAD
                 </div>
+=======
+              </div>
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
             <% }%>
             <div class='d-flex justify-content-end'>
                 <button type="submit" class=" btn btn-secondary " name="login">Login <i class="bi bi-box-arrow-right"></i></button></div>

@@ -16,11 +16,15 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
+<<<<<<< HEAD
                     <file>${libs.javaee-api-8.0.classpath}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
                     <file>${file.reference.javax.servlet-3.1.jar}</file>
+=======
+                    <file>${file.reference.javax.servlet-3.0.jar}</file>
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>

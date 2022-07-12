@@ -212,6 +212,7 @@
                 placeholder="Writer of the Book" required autocomplete="off">
             </div>
             <div class="form-group">
+<<<<<<< HEAD
                   <label for="addgenre">Genre of the Book</label>
                   <select class="form-control" id="addgenre" name="addgenre" required>
                       <option value="" disabled selected hidden>Select Genre</option>
@@ -228,11 +229,24 @@
             <div class="form-group">
               <label for="addbooklink">PDF File Link (Google Drive)<i class="bi bi-filetype-pdf"></i><i class="bi bi-filetype-ppt"></i><i class="bi bi-filetype-pptx"></i></label>
               <input type="url" class="form-control" id="addbooklink" name="addbooklink"
+=======
+              <label for="addgenre">Genre of the Book</label>
+              <input type="text" class="form-control" id="addgenre" name="addgenre"
+                placeholder="Genre of the Book" required autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="addbooklink">PDF File Link (Google Drive)<i class="bi bi-filetype-pdf"></i><i class="bi bi-filetype-ppt"></i><i class="bi bi-filetype-pptx"></i></label>
+              <input type="text" class="form-control" id="addbooklink" name="addbooklink"
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
                 placeholder="PDF File Link (Google Drive)" required autocomplete="off">
             </div>
             <div class="form-group">
               <label for="addimglink">Cover/Image Link (Google Drive<i class="bi bi-filetype-png"></i><i class="bi bi-filetype-jpg"></i></label>
+<<<<<<< HEAD
               <input type="url" class="form-control" id="addimglink" name="addimglink"
+=======
+              <input type="text" class="form-control" id="addimglink" name="addimglink"
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
                 placeholder="Cover/Image Link (Google Drive)" required autocomplete="off">
             </div>
               <div class="d-flex justify-content-end"><button type="submit" class="btn btn-success justify-content-end" name="addBook"><i class="bi bi-plus-square"></i> Book</button></div>

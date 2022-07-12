@@ -65,13 +65,18 @@ public class deleteBookServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {           
+<<<<<<< HEAD
        try(PrintWriter out = response.getWriter()) {
+=======
+       try {
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
             String id = request.getParameter("id");
             
             BookController bq = new BookController();
             Boolean delrq = bq.delete(id);
 
             if (delrq) {
+<<<<<<< HEAD
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
                     out.println("<head>");
@@ -84,6 +89,9 @@ public class deleteBookServlet extends HttpServlet {
                     out.println("</script>");
                     out.println("</body>");
                     out.println("</html>");
+=======
+                response.sendRedirect("dashboard");
+>>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
             }
             } catch (IOException | ParseException e) {
             System.out.println(e.getMessage());
