@@ -8,11 +8,7 @@ import Controller.ReqBookController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
-<<<<<<< HEAD
 import java.util.ArrayList;
-import javax.servlet.RequestDispatcher;
-=======
->>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,10 +38,6 @@ public class addReqBook extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             response.sendRedirect("index");
-<<<<<<< HEAD
-            
-=======
->>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
         }
     }
 
@@ -75,14 +67,12 @@ public class addReqBook extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-<<<<<<< HEAD
         try (PrintWriter out = response.getWriter()) {
-            
             String name = request.getParameter("namereqb");
             String email = request.getParameter("emailreqb");
             String bookreq = request.getParameter("bookreqb");
             ArrayList<String> errList = new ArrayList<>();
-            
+
             if(!name.matches("[a-z A-Z,.'-]+") || !email.matches("[a-zA-Z0-9.@-]+") || !bookreq.matches("[a-z A-Z 0-9 -]+")){
             errList.add("ERROR");
             }  
@@ -124,26 +114,7 @@ public class addReqBook extends HttpServlet {
                     out.println("</html>");  
                 }
             }
-=======
-        try {
-            String name = request.getParameter("namereqb");
-            String email = request.getParameter("emailreqb");
-            String bookreq = request.getParameter("bookreqb");
-
-
-            RequestBook model = new RequestBook();
-            model.setName(name);
-            model.setEmail(email);
-            model.setBookReq(bookreq);
-
-            ReqBookController RBC = new ReqBookController();
-            Boolean res = RBC.create(model);
-
-            if (res) {
-                response.sendRedirect("index");
-            }
-           
->>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
+            
         } catch (IOException | ParseException e) {
             System.out.println(e.getMessage());
         }

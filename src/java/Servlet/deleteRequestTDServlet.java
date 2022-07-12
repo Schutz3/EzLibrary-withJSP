@@ -35,11 +35,7 @@ public class deleteRequestTDServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-<<<<<<< HEAD
             response.sendRedirect("dashboard");
-=======
-            response.sendRedirect("dashboard.jsp");
->>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
         }
     }
 

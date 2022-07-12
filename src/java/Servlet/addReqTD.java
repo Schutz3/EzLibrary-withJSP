@@ -7,13 +7,8 @@ package Servlet;
 import Controller.ReqTDController;
 import java.io.IOException;
 import java.io.PrintWriter;
-<<<<<<< HEAD
-import static java.lang.System.out;
 import java.text.ParseException;
 import java.util.ArrayList;
-=======
-import java.text.ParseException;
->>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -72,7 +67,6 @@ public class addReqTD extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-<<<<<<< HEAD
         try(PrintWriter out = response.getWriter()) {
             String name = request.getParameter("namereqtd");
             String email = request.getParameter("emailreqtd");
@@ -118,28 +112,12 @@ public class addReqTD extends HttpServlet {
                     out.println("</body>");
                     out.println("</html>");
                 }
-            }
-
-=======
-        try {
-            String name = request.getParameter("namereqtd");
-            String email = request.getParameter("emailreqtd");
-            String booktdreq = request.getParameter("bookreqtd");
-            RequestTD model = new RequestTD();
-            model.setName(name);
-            model.setEmail(email);
-            model.setBookReqTD(booktdreq);
-
-            ReqTDController RBC = new ReqTDController();
-            Boolean res = RBC.create(model);
-            if (res) {
-                response.sendRedirect("index");
-            }
->>>>>>> 6f94c1c740c7de2257b2da5b882b4ca6688395dd
+           }
         } catch (IOException | ParseException e) {
             System.out.println(e.getMessage());
         }
     }
+
 
     /**
      * Returns a short description of the servlet.
