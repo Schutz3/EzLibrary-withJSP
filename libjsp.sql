@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 09, 2022 at 05:26 AM
+-- Generation Time: Jul 13, 2022 at 12:24 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -41,28 +41,9 @@ CREATE TABLE `lib` (
 --
 
 INSERT INTO `lib` (`id`, `img`, `judul`, `penulis`, `genre`, `link`) VALUES
-(23, '1CPvdtivn63bJ5BOmSOngFFiMqII6UwCU', 'Algorithm & DS C01', 'ipul', 'Science', '1GgzISEDwLQKtqZ-eW1-9-f6dGiu6P4vq'),
-(24, '111g9ruR3cyQ8ipUlVlARn9VeI9jJkNFs', 'Algoritm & DS C02', 'unknown', 'Science', '1GaQHgEGrtN9XMxkV0RgD4tCZTTBLNh_s');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `librarian`
---
-
-CREATE TABLE `librarian` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `librarian`
---
-
-INSERT INTO `librarian` (`id`, `username`, `password`, `email`) VALUES
-(1, 'farhan', '$2y$10$1e0Y5xRrT9dqfrxdabPFyOgJSQYB3k/KU9.PaOm4jZqOAAheVZvJa', 'farhan@farhanoktavian.tech');
+(23, '1CPvdtivn63bJ5BOmSOngFFiMqII6UwCU', 'Algorithm & DS C01', 'ipul', 'Others', '1GgzISEDwLQKtqZ-eW1-9-f6dGiu6P4vq'),
+(28, '111g9ruR3cyQ8ipUlVlARn9VeI9jJkNFs', 'Algorithm & DS C02', 'Unknown', 'Science', '1GaQHgEGrtN9XMxkV0RgD4tCZTTBLNh_s'),
+(29, '14weGd2_3Cm2W_Im2jlaNWkxAjrRJaoIN', 'Software Engineer A Practitioner Approach', 'Roger S. PRESSMAN', 'Technology', '103us_ucVXtLJzEZt8x9vD-BGKd0cqWta');
 
 -- --------------------------------------------------------
 
@@ -99,6 +80,14 @@ CREATE TABLE `reqbook` (
   `bookreq` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `reqbook`
+--
+
+INSERT INTO `reqbook` (`id`, `name`, `email`, `bookreq`) VALUES
+(31, 'Farhan Dwi', '02.farhan.dwi@gmail.com', 'Software Engineer A Practitioner Approach'),
+(32, 'Fariz', 'farizmuhammad@mail.ugm.ac.id', 'Software Engineer A Practitioner Approach');
+
 -- --------------------------------------------------------
 
 --
@@ -113,6 +102,14 @@ CREATE TABLE `reqtd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `reqtd`
+--
+
+INSERT INTO `reqtd` (`id`, `name`, `email`, `booktdreq`) VALUES
+(100, 'Farhan Dwi', '02.farhan.dwi@gmail.com', '23 || Algorithm & DS C01'),
+(101, 'Fariz', 'farizmuhammad@mail.ugm.ac.id', '28 || Algorithm & DS C02');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -120,12 +117,6 @@ CREATE TABLE `reqtd` (
 -- Indexes for table `lib`
 --
 ALTER TABLE `lib`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `librarian`
---
-ALTER TABLE `librarian`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -154,13 +145,7 @@ ALTER TABLE `reqtd`
 -- AUTO_INCREMENT for table `lib`
 --
 ALTER TABLE `lib`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
---
--- AUTO_INCREMENT for table `librarian`
---
-ALTER TABLE `librarian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `librarians`
@@ -172,13 +157,13 @@ ALTER TABLE `librarians`
 -- AUTO_INCREMENT for table `reqbook`
 --
 ALTER TABLE `reqbook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `reqtd`
 --
 ALTER TABLE `reqtd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
