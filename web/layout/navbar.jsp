@@ -30,7 +30,18 @@
 
     <div class="navbar-collapse collapse show" id="navbarColor01" >
       <ul class="navbar-nav mr-auto">
-      
+      <li class="nav-item dropdown ml-1">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          Sort By
+        </a>
+        
+        <ul class="dropdown-menu " aria-labelledby="navbarScrollingDropdown">
+        <li><a class="dropdown-item" href="?sort=desc">Newest</a></li>
+          <li><a class="dropdown-item" href="?sort=asc">Oldest</a></li>
+          <li><a class="dropdown-item" href="?sort=Aa-Zz">Aa-Zz</a></li>
+          <li><a class="dropdown-item" href="?sort=Zz-Aa">Zz-Aa</a></li>
+        </ul>
+      </li>
       </ul>
         <form class="form-inline" action="" method="GET">
         <input class="form-control mr-sm-2" type="text" name="search"  placeholder="Find a Book" autocomplete="off" value="<%= search%>" required>

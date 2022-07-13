@@ -8,20 +8,38 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%          if (session.getAttribute("isLoggedIn") != null) {
-            response.sendRedirect("dashboard");
-            return;
+                response.sendRedirect("dashboard");
+                return;
             }
             BookController bc = new BookController();
             String search = "";
+            String sort = "";
             ResultSet rs;
             if (request.getParameter("search") != null) {
                 search = request.getParameter("search");
-            } 
-            if (search.equals("")) {
-                rs = bc.get();
-            } else {
-                rs = bc.getByName(search);
             }
+            if (request.getParameter("sort") != null) {
+                sort = request.getParameter("sort");
+            }
+                if (search.equals("")) {
+                    if (sort.equals("Zz-Aa")) {
+                    rs = bc.sortZa();
+                    } 
+                    else if (sort.equals("desc")) {
+                    rs = bc.sortNl();
+                    }
+                    else if (sort.equals("asc")) {
+                    rs = bc.sortLn();
+                    }
+                    else if (sort.equals("Aa-Zz")) {
+                    rs = bc.sortAz();
+                    }
+                    else {
+                    rs = bc.get();
+                    }
+                } else {
+                rs = bc.getByName(search);
+                }
 %>
 <html lang="en">
     <head>

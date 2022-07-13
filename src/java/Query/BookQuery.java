@@ -24,5 +24,13 @@ package Query;
     
     public String getById = "SELECT * FROM lib where id = ?"; 
     
+    public String sortAz = "SELECT * FROM lib ORDER BY judul ASC";
+    
+    public String sortZa = "SELECT * FROM lib ORDER BY judul DESC";
+    
+    public String sortNl = "SELECT * FROM lib ORDER BY id DESC";
+    
+    public String sortLn = "SELECT * FROM lib ORDER BY id ASC";
+    
     }
     
