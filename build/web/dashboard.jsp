@@ -84,7 +84,7 @@
                                     Genre: <b><%= rs.getString("genre")%></b><br>
                                 </p>
                                 <button class="btn btn-secondary mt-1" type="submit" data-toggle="modal" data-target="#modalBaca<%= rs.getString("id")%>"><i class="bi bi-book-fill"></i> Read</button>
-                                <a href="https://drive.google.com/uc?export=download&id=<%= rs.getString("link")%>" onclick="return confirm('Do You Want To Download This E-Book?');"><button class="btn btn-success mt-1" type="submit"><i class="bi bi-file-earmark-arrow-down-fill"></i>Get</button></a>
+                                <a href="https://drive.google.com/uc?export=download&id=<%= rs.getString("link")%>" onclick="return confirm('Do You Want To Download Book \n<%= rs.getString("judul")%> ?');"><button class="btn btn-success mt-1" type="submit"><i class="bi bi-file-earmark-arrow-down-fill"></i>Get</button></a>
                                 <button class="btn btn-primary mt-1" type="submit" data-toggle="modal" data-target="#updBook<%= rs.getString("id")%>"><i class="bi bi-pencil-square"></i> Edit</button>
                                 <form action="deleteBookServlet?id=<%= rs.getString("id") %>" method="POST">
                                 <button class="btn btn-danger mt-1" onclick='return confirm(`ARE YOU SURE WANT TO DELETE BOOK \n<%= rs.getString("judul")%> || ID: <%= rs.getString("id") %>  \nFROM LIST?`);' type="submit"><i class="bi bi-trash3-fill"></i></button></form>
@@ -103,22 +103,22 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="editBookServlet" method="POST">
+                            <form action="editBook" method="POST">
                               <div class="form-group">
                                 <input type="hidden" name="id" value="<%= rs.getString("id") %>">
                                 <label for="judul">Title of the Book or Journal</label>
                                 <input type="text" class="form-control" id="judul" name="judul"
-                                  placeholder="Title of the Book or Journal" required autocomplete="off" value="<%= rs.getString("judul")%>" required>
+                                  placeholder="Title of the Book or Journal" required autocomplete="off" value="<%= rs.getString("judul")%>">
                               </div>
                               <div class="form-group">
                                 <label for="penulis">Writer of the Book</label>
                                 <input type="text" class="form-control" id="penulis" name="penulis"
-                                  placeholder="Writer of the Book" required autocomplete="off" value="<%= rs.getString("penulis")%>" required>
+                                  placeholder="Writer of the Book" required autocomplete="off" value="<%= rs.getString("penulis")%>">
                               </div>
                               <div class="form-group">
                                 <label for="genre">Genre of the Book</label>
                                   <select class="form-control" id="genre" name="genre" required>
-                                      <option value="<%= rs.getString("genre")%>" disabled selected hidden>Select Genre (Current Genre is <b><%= rs.getString("genre")%>)</b></option>
+                                      <option hidden><%= rs.getString("genre")%></option>
                                         <option>Science</option>
                                         <option>Social</option>
                                         <option>Fiction</option>

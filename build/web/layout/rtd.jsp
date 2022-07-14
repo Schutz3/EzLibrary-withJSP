@@ -24,7 +24,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="requestRTD">Request Book Take Down</h5>
+          <h5 class="modal-title" id="requestRTD">Report Book</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -51,7 +51,7 @@
                  <% } %>
                 </select>
             </div>
-            <button type="submit" class="btn btn-secondary" name="submit">Request Take Down</button>
+            <button type="submit" class="btn btn-secondary" name="submit">Report This Book</button>
           </form>
         </div>
       </div>

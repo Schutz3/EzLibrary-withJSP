@@ -84,7 +84,7 @@
                                     Genre: <b><%= rs.getString("genre")%></b><br>
                                 </p>
                                 <button class="btn btn-secondary mt-1" type="submit" data-toggle="modal" data-target="#modalBaca<%= rs.getString("id")%>"><i class="bi bi-book-fill"></i> Read</button>
-                                <a href="https://drive.google.com/uc?export=download&id=<%= rs.getString("link")%>" onclick="return confirm('Do You Want To Download This E-Book?');"><button class="btn btn-success mt-1" type="submit"><i class="bi bi-file-earmark-arrow-down-fill"></i>Get</button></a>
+                                <a href="https://drive.google.com/uc?export=download&id=<%= rs.getString("link")%>" onclick="return confirm('Do You Want To Download Book \n<%= rs.getString("judul")%> ?');"><button class="btn btn-success mt-1" type="submit"><i class="bi bi-file-earmark-arrow-down-fill"></i>Get</button></a>
                             </div>
                         </div>
                     </div>

@@ -5,22 +5,19 @@
 package Servlet;
 
 import Controller.BookController;
-import java.io.IOException;
-import java.io.PrintWriter;
+import Helper.StringHelper;
+import java.io.*;
 import java.text.ParseException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import qModel.Book;
 
 /**
  *
  * @author Farhan
  */
-@WebServlet(name = "editBookServlet", urlPatterns = {"/editBookServlet"})
+@WebServlet(name = "editBookServlet", urlPatterns = {"/editBook"})
 public class editBookServlet extends HttpServlet {
 
     /**
@@ -68,31 +65,29 @@ public class editBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try(PrintWriter out = response.getWriter()) {
+            StringHelper h = new StringHelper();
+            
             String id = request.getParameter("id");
             String imglink = request.getParameter("imglink");
-            String judul = request.getParameter("judul");
-            String penulis = request.getParameter("penulis");
             String genre = request.getParameter("genre");
             String booklink = request.getParameter("booklink");
-            ArrayList<String> errList = new ArrayList<>();
+            String judul = request.getParameter("judul");
+            String penulis = request.getParameter("penulis");
+            String validation = h.validateEditB(imglink, judul, penulis, booklink);
             
-            if(!judul.matches("[^<>{}]+") 
-            || !penulis.matches("[^<>{}]+")
-            || !imglink.matches("https:\\/\\/drive\\.google\\.com\\/file\\/d\\/(.*?)\\/view\\?usp\\=sharing")        
-            || !booklink.matches("https:\\/\\/drive\\.google\\.com\\/file\\/d\\/(.*?)\\/view\\?usp\\=sharing")){
-            errList.add("ERROR");
-            }
-            if (!errList.isEmpty()) {
+            if (!validation.isEmpty()) {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<meta http-equiv='refresh' content='5;URL=dashboard.jsp'>");
                 out.println("<title>EDIT BOOK ERROR</title>");            
                 out.println("</head>");
-                out.println("<body style='background-color: black;'>");
-                out.println("<h1 style='color:red; text-align: center;'>!! EDIT BOOK FAILED !!</h1>"
-                            + "<br><h2 style='color:red; text-align: center;'>Your Request Cannot Be Proced due to Input Valid<br>!! Please Input Correctly !!</h2>"
-                            + "<br><h3 style='color:red; text-align: center;'>You'll be Redirect to main home within 5 second</h3>");
+                out.println("<body style='background-color: black; color:red; text-align: center; color:red; text-align: center;'>");
+                out.println("   <h1>!! EDIT BOOK FAILED !!</h1>"
+                            + "<h2>Your Request Cannot Be Proced due to Input Valid</h2>"
+                            + validation
+                            + "<h2> !! Please Input Correctly !!</h2>"
+                            + "<h3>You'll be Redirect to main home within 5 second</h3>");
                 out.println("</body>");
                 out.println("</html>");
             }else {
@@ -106,8 +101,8 @@ public class editBookServlet extends HttpServlet {
             model.setGenre(genre);
             model.setLink(blink);
 
-            BookController BC = new BookController();
-            Boolean res = BC.update(id, model);
+            BookController bc = new BookController();
+            Boolean res = bc.update(id, model);
             if (res) {
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
@@ -116,7 +111,7 @@ public class editBookServlet extends HttpServlet {
                     out.println("<title>EDIT BOOK SUCCESS</title>");            
                     out.println("</head>");
                     out.println("<script type=\"text/javascript\">");
-                    out.println("alert('BOOK SUCCESSFULLY EDITED');");
+                    out.println("alert('BOOK " +judul+ " SUCCESSFULLY EDITED');");
                     out.println("location='dashboard.jsp';");
                     out.println("</script>");
                     out.println("</body>");
@@ -124,8 +119,6 @@ public class editBookServlet extends HttpServlet {
             
             }
             }
-        
-
         } catch (IOException | ParseException e) {
             System.out.println(e.getMessage());
         }

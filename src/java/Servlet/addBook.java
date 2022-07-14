@@ -5,9 +5,9 @@
 package Servlet;
 
 import Controller.BookController;
+import Helper.StringHelper;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.ParseException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -69,31 +69,27 @@ public class addBook extends HttpServlet {
             throws ServletException, IOException {
 
         try(PrintWriter out = response.getWriter()) {
-
+            StringHelper h = new StringHelper();
             String imglink = request.getParameter("addimglink");
             String judul = request.getParameter("addjudul");
             String penulis = request.getParameter("addpenulis");
             String genre = request.getParameter("addgenre");
             String booklink = request.getParameter("addbooklink");
-            ArrayList<String> errList = new ArrayList<>();
+            String validation = h.validateAddB(imglink, judul, penulis, booklink);
             
-            if(!judul.matches("[^<>{}]+") 
-            || !penulis.matches("[^<>{}]+")
-            || !imglink.matches("https:\\/\\/drive\\.google\\.com\\/file\\/d\\/(.*?)\\/view\\?usp\\=sharing")        
-            || !booklink.matches("https:\\/\\/drive\\.google\\.com\\/file\\/d\\/(.*?)\\/view\\?usp\\=sharing")){
-            errList.add("ERROR");
-            }
-            if (!errList.isEmpty()) {
+            if (!validation.isEmpty()) {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<meta http-equiv='refresh' content='5;URL=dashboard.jsp'>");
                 out.println("<title>ADD BOOK ERROR</title>");            
                 out.println("</head>");
-                out.println("<body style='background-color: black;'>");
-                out.println("<h1 style='color:red; text-align: center;'>!! ADD BOOK FAILED !!</h1>"
-                            + "<br><h2 style='color:red; text-align: center;'>Your Request Cannot Be Proced due to Input Valid<br>!! Please Input Correctly !!</h2>"
-                            + "<br><h3 style='color:red; text-align: center;'>You'll be Redirect to main home within 5 second</h3>");
+                out.println("<body style='background-color: black; color:red; text-align: center;'>");
+                out.println("<h1>!! ADD BOOK FAILED !!</h1>"
+                            + "<h2>Your Request Cannot Be Proced due to Input Valid</h2>"
+                            + validation
+                            + "<h2>!! Please Input Correctly !!</h2>"
+                            + "<br><h3>You'll be Redirect to main home within 5 second</h3>");
                 out.println("</body>");
                 out.println("</html>");
             }else {
@@ -117,7 +113,7 @@ public class addBook extends HttpServlet {
                     out.println("<title>ADD BOOK SUCCESS</title>");            
                     out.println("</head>");
                     out.println("<script type=\"text/javascript\">");
-                    out.println("alert('NEW BOOK SUCCESSFULLY ADDED');");
+                    out.println("alert('BOOK "+judul+" SUCCESSFULLY ADDED');");
                     out.println("location='dashboard.jsp';");
                     out.println("</script>");
                     out.println("</body>");
