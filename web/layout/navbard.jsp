@@ -30,7 +30,7 @@
               <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content text-center justify-content-center">
                   <div class="modal-header ">
-                    <h6 class="modal-title text-center justify-content-center" id="exampleModalLongTitle">Book Takedown Request</h6>
+                    <h6 class="modal-title text-center justify-content-center" id="exampleModalLongTitle">Book Report</h6>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -43,14 +43,14 @@
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Requesting Takedown of book:</th>
+                            <th scope="col">Reporting book:</th>
                             <th scope="col">Action</th>
                           </tr>
                       </thead>
                       <tbody>
                       <% if (!td.isBeforeFirst()) { %>
 		                          <tr>
-			                        <td colspan="5" style="align: center;">No Takedown Request</td>
+			                        <td colspan="5" style="align: center;">No Book Report</td>
 		                          </tr>
 	               <% } %>
                       <% int i = 1;
@@ -82,7 +82,7 @@
               <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content text-center justify-content-center">
                   <div class="modal-header ">
-                    <h6 class="modal-title text-center justify-content-center" id="exampleModalLongTitle">Book Request Msg</h6>
+                    <h6 class="modal-title text-center justify-content-center" id="exampleModalLongTitle">Book Request</h6>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -102,7 +102,7 @@
                       <tbody>
                           <% if (!rq.isBeforeFirst()) { %>
 		                          <tr>
-			                        <td colspan="5" style="align: center;">No More Request</td>
+			                        <td colspan="5" style="align: center;">No Request</td>
 		                          </tr>
                           <% } %>
                           <% int j = 1;
