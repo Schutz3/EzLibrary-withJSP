@@ -19,8 +19,7 @@ package Query;
     public String create = "INSERT INTO lib (img, judul, " + 
             "penulis, genre, link) VALUES (?, ?, ?, ?, ?)";
     
-    public String update = "UPDATE lib SET img = ?, judul = ?, "
-            + "penulis = ?, genre = ?, link = ? WHERE id = ?";
+    public String update = "UPDATE lib SET img = ?, judul = ?, penulis = ?, genre = ?, link = ? WHERE id = ?";
     
     public String getById = "SELECT * FROM lib where id = ?"; 
     

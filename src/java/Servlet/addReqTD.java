@@ -5,15 +5,12 @@
 package Servlet;
 
 import Controller.ReqTDController;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.ParseException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
+import Helper.StringHelper;
 import qModel.RequestTD;
 
 /**
@@ -68,26 +65,25 @@ public class addReqTD extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try(PrintWriter out = response.getWriter()) {
+            StringHelper h = new StringHelper();
             String name = request.getParameter("namereqtd");
             String email = request.getParameter("emailreqtd");
             String booktdreq = request.getParameter("bookreqtd");
-            ArrayList<String> errList = new ArrayList<>();
+            String validation = h.validateReqTD(name, email);
             
-            if(!name.matches("[a-z A-Z,.'-]+") || !email.matches("[a-zA-Z0-9.@-]+")){
-            errList.add("ERROR");
-            }  
-            
-           if (!errList.isEmpty()) {
+           if (!validation.isEmpty()) {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<meta http-equiv='refresh' content='5;URL=index.jsp'>");
                 out.println("<title>REQUEST ERROR !!!!</title>");            
                 out.println("</head>");
-                out.println("<body style='background-color: black;'>");
-                out.println("<h1 style='color:red; text-align: center;'>!! REQUEST FAILED !!</h1>"
-                            + "<br><h2 style='color:red; text-align: center;'>Your Request Cannot Be Proced due to Input Valid<br>!! Please Input Correctly !!</h2>"
-                            + "<br><h3 style='color:red; text-align: center;'>You'll be Redirect to main home within 5 second</h3>");
+                out.println("<body style='background-color: black; color:red; text-align: center;'>");
+                out.println("<h1>!! REQUEST FAILED !!</h1>"
+                            + "<br><h2>Your Request Cannot Be Proced due to: "
+                            + validation
+                            + "<h2> Please Input Correctly !!</h2>"
+                            + "<br><h3>You'll be Redirect to main page within 5 second</h3>");
                 out.println("</body>");
                 out.println("</html>");
             }else {
@@ -105,10 +101,10 @@ public class addReqTD extends HttpServlet {
                     out.println("<meta http-equiv='refresh' content='5;URL=index.jsp'>");
                     out.println("<title>REQUEST SUCCESS</title>");            
                     out.println("</head>");
-                    out.println("<body style='background-color: black;>");
-                    out.println("<h1 style='color:green; text-align: center;'>REQUEST SUCCESS</h1>"
-                            + "<br><h2 style='color:green; text-align: center;'>Your Request Has Been Submited To Our Librarian</h2>"
-                            + "<br><h3 style='color:green; text-align: center;'>You'll be Redirect to main home within 5 second</h3>");
+                    out.println("<body style='background-color: black; color:green; text-align: center;'>");
+                    out.println("<h1>REQUEST SUCCESS</h1>"
+                            + "<br><h2>Your Request Has Been Submited To Our Librarian</h2>"
+                            + "<br><h3>You'll be Redirect to main page within 5 second</h3>");
                     out.println("</body>");
                     out.println("</html>");
                 }
