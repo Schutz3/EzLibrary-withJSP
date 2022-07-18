@@ -1,9 +1,5 @@
 # EzLibrary - Web Based Library
 This Repository is For Fulfill Task
-
-# Live Site Test
-
-  https://jsp.farhanoktavian.tech/e-lib/
   
 librarian / admin credential
 
