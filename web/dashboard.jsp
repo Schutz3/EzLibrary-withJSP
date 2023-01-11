@@ -50,7 +50,7 @@
            <jsp:include page="layout/navbard.jsp"/>  
             <!-- START Header -->
             <div class="header">
-                <div class="container text-center pt-3 bg-success opacity-1 pb-1">
+                <div class="container text-center pt-3 bg-warning opacity-1 pb-1">
                     <h5 class="display-6 hammer text-light pt-3 mt-5 opacity-0">Hi, <i class="text-warning"> <%= request.getSession(true).getAttribute("name") %></i>. Welcome to the EzLibrary Dashboard! </h5>
                     <p class="lead text-light">You are logged in using username : <strong class="text-warning"><%= request.getSession().getAttribute("username") %></strong></p>
                 </div>
