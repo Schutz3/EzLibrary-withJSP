@@ -22,11 +22,6 @@ INSERT INTO `lib` (`id`, `img`, `judul`, `penulis`, `genre`, `link`) VALUES
 (28, '111g9ruR3cyQ8ipUlVlARn9VeI9jJkNFs', 'Algorithm & DS C02', 'Unknown', 'Science', '1GaQHgEGrtN9XMxkV0RgD4tCZTTBLNh_s'),
 (29, '14weGd2_3Cm2W_Im2jlaNWkxAjrRJaoIN', 'Software Engineer A Practitioner Approach', 'Roger S. PRESSMAN', 'Technology', '103us_ucVXtLJzEZt8x9vD-BGKd0cqWta');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `librarians`
---
 
 CREATE TABLE `librarians` (
   `id` int(11) NOT NULL,
@@ -35,20 +30,20 @@ CREATE TABLE `librarians` (
   `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `librarians`
---
+
+
+
+
+
+
 
 INSERT INTO `librarians` (`id`, `name`, `username`, `password`) VALUES
 (2, 'Farhan Dwi O', 'farhan', 'farhan'),
-(3, 'Reza Hans L', 'reza', 'reza'),
-(4, 'Ezra Ayu R', 'ezra', 'ezra');
+(3, 'Reza Hans L', 'reza', 'reza');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `reqbook`
---
+
+
 
 CREATE TABLE `reqbook` (
   `id` int(11) NOT NULL,
