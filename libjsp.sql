@@ -44,11 +44,8 @@ INSERT INTO `librarians` (`id`, `name`, `username`, `password`) VALUES
 
 
 
--- --------------------------------------------------------
 
---
--- Table structure for table `reqbook`
---
+
 
 CREATE TABLE `reqbook` (
   `id` int(11) NOT NULL,
