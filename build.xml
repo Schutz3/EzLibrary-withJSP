@@ -71,8 +71,8 @@
 
 <target name="jenkins-glassfish-deploy" depends="clean, default, test"
     description="Clean, build, test and deploy application to GlassFish">
-    <exec failonerror="true" executable="cmd" description="Deploy to GlassFish">
-        <arg value="/c/Users/Farhan/GlassFish_Server/glassfish/bin" />
+    <exec failonerror="true" executable="cmd" description="Deploy to GlassFish" dir="C:\Users\Farhan\GlassFish_Server\glassfish\bin">
+        <arg value="/c" />
         <arg value="asadmin --echo=true --host=localhost --port=4848 --secure=false
             deploy --force=true --name=e-lib --contextroot=/e-lib dist\e-lib.war" />
     </exec>
