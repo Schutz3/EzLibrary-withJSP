@@ -74,7 +74,7 @@
     <exec failonerror="true" executable="cmd" description="Deploy to GlassFish" dir="C:\Users\Farhan\GlassFish_Server\bin">
         <arg value="/c" />
         <arg value="asadmin --echo=true --host=localhost --port=4848 --secure=false
-            deploy --force=true --name=e-lib --contextroot=/e-lib dist\e-lib.war" />
+            deploy --force=true --name=e-lib --contextroot=/e-lib " />
     </exec>
 </target>
 </project>
