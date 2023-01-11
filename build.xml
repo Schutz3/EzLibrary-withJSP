@@ -69,7 +69,7 @@
 
     -->
 
-<target name="jenkins-glassfish-deploy-updated" depends="clean, default, test"
+<target name="jenkins-glassfish-deploy" depends="clean, default, test"
     description="Clean, build, test and deploy application to GlassFish">
     <exec failonerror="true" executable="cmd" description="Deploy to GlassFish">
         <arg value="/c" />
