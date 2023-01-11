@@ -43,6 +43,9 @@ INSERT INTO `librarians` (`id`, `name`, `username`, `password`) VALUES
 (2, 'Farhan Dwi O', 'farhan', 'farhan'),
 (3, 'Reza Hans L', 'reza', 'reza');
 
+
+
+
 -- --------------------------------------------------------
 
 --
