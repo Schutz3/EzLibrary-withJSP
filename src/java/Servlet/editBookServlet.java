@@ -17,8 +17,8 @@ import qModel.Book;
  *
  * @author Farhan
  */
-@WebServlet(name = "editBook", urlPatterns = {"/editBook"})
-public class editBook extends HttpServlet {
+@WebServlet(name = "editBookServlet", urlPatterns = {"/editBookServlet"})
+public class editBookServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

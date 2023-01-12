@@ -103,7 +103,7 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="editBook" method="POST">
+                            <form action="editBookServlet" method="POST">
                               <div class="form-group">
                                 <input type="hidden" name="id" value="<%= rs.getString("id") %>">
                                 <label for="judul">Title of the Book or Journal</label>
