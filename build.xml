@@ -77,4 +77,11 @@
             deploy --force=true --name=e-lib --contextroot=/e-lib dist\e-lib.war" />
     </exec>
 </target>
+    <target name="run-sql">
+       <sql driver="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://127.0.0.1:3306/lib"
+            userid="root"
+            password="root">
+       </sql>
+    </target>
 </project>
