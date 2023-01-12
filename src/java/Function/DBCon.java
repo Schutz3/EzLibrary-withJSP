@@ -17,7 +17,7 @@ public class DBCon {
         
         try {
             Class.forName("com.mysql.jdbc.Driver"); // Import JDBC Driver MySQL
-            String url = "jdbc:mysql://127.0.0.1:3306/lib"; // URL dari Host Database
+            String url = "jdbc:mysql://localhost:3306/lib"; // URL dari Host Database
             con = DriverManager.getConnection(url, "root", "root"); // Host, username, password
             return con;
         } catch (Exception e) {
