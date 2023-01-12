@@ -51,7 +51,7 @@
             <jsp:include page="layout/loginmdl.jsp"/>  
             <!-- START Header -->
             <div class="header">
-                <div class="container text-center pt-3 bg-danger opacity-1 pb-1">
+                <div class="container text-center pt-3 bg-warning opacity-1 pb-1">
                     <h3 class="display-6 hammer text-light pt-3 mt-5 pb-3 mb-3 opacity-0">Online library for everyone</h3> 
                 </div>
             </div>
