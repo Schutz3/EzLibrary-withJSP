@@ -24,11 +24,11 @@ if ERRORLEVEL 0 goto ok
 echo "Unable to enable extensions"
 exit /B 1
 :ok
-call "%~dp0..\glassfish\config\asenv.bat"
+call "C:\Users\Farhan\GlassFish_Server\glassfish\config\asenv.bat"
 if "%AS_JAVA%x" == "x" goto UsePath
 set JAVA="%AS_JAVA%\bin\java"
 goto run
 :UsePath
 set JAVA=java
 :run
-%JAVA% -jar "%~dp0..\glassfish\lib\client\appserver-cli.jar" %*
+%JAVA% -jar "C:\Users\Farhan\GlassFish_Server\glassfish\lib\client\appserver-cli.jar" %*
