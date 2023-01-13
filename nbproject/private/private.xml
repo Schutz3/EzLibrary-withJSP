@@ -4,9 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/JAVA/EzLibrary-withJSP/src/java/Function/DBCon.java</file>
+            <file>file:/D:/JAVA/EzLibrary-withJSP/web/dashboard.jsp</file>
+            <file>file:/D:/JAVA/EzLibrary-withJSP/src/java/Servlet/editBookServlet.java</file>
+            <file>file:/D:/JAVA/EzLibrary-withJSP/src/java/Servlet/addReqTD.java</file>
+            <file>file:/D:/JAVA/EzLibrary-withJSP/src/java/Servlet/IndexServlet.java</file>
+            <file>file:/D:/JAVA/EzLibrary-withJSP/src/java/Helper/StringHelper.java</file>
             <file>file:/D:/JAVA/EzLibrary-withJSP/web/index.jsp</file>
             <file>file:/D:/JAVA/EzLibrary-withJSP/nbproject/build-impl.xml</file>
             <file>file:/D:/JAVA/EzLibrary-withJSP/build.xml</file>
+            <file>file:/D:/JAVA/EzLibrary-withJSP/src/java/Servlet/deleteRequestTDServlet.java</file>
         </group>
     </open-files>
 </project-private>
